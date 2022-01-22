@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Name>Balham</Name>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="source\Program.fs" />
+    <Compile Include="source/Console.fs" />
+    <Compile Include="source/Game/Coordinates.fs" />
+    <Compile Include="source/Game/Cell.fs" />
+    <Compile Include="source/Game/Ship.fs" />
+    <Compile Include="source/Game/Board.fs" />
+    <Compile Include="source/Program.fs" />
+  </ItemGroup>
+</Project>
