@@ -1,13 +1,13 @@
-namespace Balham
+namespace Neasden
 
 module Program =
 
-    let loop (): int =
-        let board = Game.Board.empty ()
-        Game.Board.display board
+    [<EntryPoint>]
+    let main _ =
+        let startState = Game.stateCreate ()
+        let outcome = Game.play startState
 
         0
 
-    [<EntryPoint>]
-    let main _ =
-        loop ()
+
+
