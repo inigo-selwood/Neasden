@@ -5,12 +5,9 @@
     <Name>Balham</Name>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="source\Program.fs" />
+    <Compile Include="source/Geometry.fs" />
     <Compile Include="source/Console.fs" />
-    <Compile Include="source/Game/Coordinates.fs" />
-    <Compile Include="source/Game/Cell.fs" />
-    <Compile Include="source/Game/Ship.fs" />
-    <Compile Include="source/Game/Board.fs" />
+    <Compile Include="source/Game.fs" />
     <Compile Include="source/Program.fs" />
   </ItemGroup>
 </Project>
