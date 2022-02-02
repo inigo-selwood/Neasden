@@ -87,10 +87,21 @@ module Game =
             // When the enter key is hit, confirm the current position of the
             // cursor
             elif key = "Enter" then 
-                {
-                    index = cursor
-                    confirmed = true
-                }
+
+                // Check the cell selected isn't already occupied
+                if board.cells[cursor] = 0 then
+                    {
+                        index = cursor
+                        confirmed = true
+                    }
+                
+                // Otherwise, send a console beep and don't confirm the move
+                else 
+                    System.Console.Beep ()
+                    {
+                        index = cursor 
+                        confirmed = false
+                    }
             
             // For any other key, sound the console bell, and don't move the 
             // cursor
@@ -217,6 +228,10 @@ module Game =
 
     // Play the game
     let play (): Outcome = 
+
+        System.Console.Write("\n")
+        System.Console.Write("Noughts and Crosses | Inigo Selwood 2022 (c)\n")
+        System.Console.Write("Move cursor: ← ↑ ↓ →\n")
     
         let rec loop (state: State): Outcome =
 
