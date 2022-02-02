@@ -5,6 +5,7 @@
     <Name>Neasden</Name>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="source/Console.fs" />
     <Compile Include="source/Player.fs" />
     <Compile Include="source/Move.fs" />
     <Compile Include="source/Board.fs" />
