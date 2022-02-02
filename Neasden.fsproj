@@ -2,11 +2,13 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <Name>Balham</Name>
+    <Name>Neasden</Name>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="source/Geometry.fs" />
-    <Compile Include="source/Console.fs" />
+    <Compile Include="source/Player.fs" />
+    <Compile Include="source/Move.fs" />
+    <Compile Include="source/Board.fs" />
+    <Compile Include="source/State.fs" />
     <Compile Include="source/Game.fs" />
     <Compile Include="source/Program.fs" />
   </ItemGroup>
