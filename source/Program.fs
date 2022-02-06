@@ -4,7 +4,5 @@ module Program =
 
     [<EntryPoint>]
     let main _ =
-        let outcome = Game.play ()
-
-        Console.clearToEnd ()
+        Game.play ()
         0

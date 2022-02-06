@@ -32,6 +32,3 @@ module State =
             turn = newTurn
             player = newPlayer
         }
-    
-    let display (state: State): unit =
-        Board.display state.board

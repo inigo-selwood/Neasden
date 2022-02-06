@@ -227,21 +227,30 @@ module Game =
         State.advance state move
 
     // Play the game
-    let play (): Outcome = 
+    let play (): unit = 
 
-        System.Console.Write("\n")
-        System.Console.Write("Noughts and Crosses | Inigo Selwood 2022 (c)\n")
-        System.Console.Write("Move cursor: ← ↑ ↓ →\n")
-    
+        let consoleOrigin = Console.getCursorXY ()
+
         let rec loop (state: State): Outcome =
-
+            Console.setCursorXY consoleOrigin
             Board.display state.board
 
             let newState = turn state
             let outcome = Board.outcomeForPlayer newState.board Player.USER
-            
+    
             if outcome.IsNone then loop newState
             else outcome.Value
         
-        loop (State.create ())
+        let startState = State.create ()
+        let outcome = loop startState
+        
+        // Let the player know how the game ended
+        let outcomeMessage =
+            match outcome with 
+                | Outcome.WIN -> "you won, congratulations!\n"
+                | Outcome.LOSS -> "you lost, comiserations.\n"
+                | Outcome.DRAW -> "the game was a draw, better luck next time\n"
+        
+        System.Console.Write(outcomeMessage)
+        ()
 

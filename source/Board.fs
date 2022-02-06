@@ -150,21 +150,18 @@ module Board =
             // Otherwise, get the box drawing character for this position
             else 
                 getBoxCharacter
-        
-        // Save cursor position
-        Console.saveCursor ()
-        
+                
         // Driver for drawing each x, y position in the grid
         let width = columns * realWidth
         let height = rows * realHeight
+
         for y in 0..(height) do
             for x in 0..(width) do
                 let character = getCharacter (x, y)
                 System.Console.Write(character)
-            System.Console.Write('\n')
-
-        // Restore cursor position
-        Console.restoreCursor ()
+            System.Console.Write("\n")
+        
+            
     
     // Determine the outcome of a game for a given player, or None if an 
     // outcome hasn't been reached yet

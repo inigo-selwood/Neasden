@@ -2,14 +2,11 @@ namespace Neasden
 
 module Console =
 
-    let private sendCommand (command: string): unit =
-        System.Console.Write((string (char 0x1b)) + command)
-
-    let saveCursor (): unit =
-        sendCommand "[s"
+    let getCursorXY (): int * int =
+        let x = System.Console.CursorLeft
+        let y = System.Console.CursorTop
+        (x, y)
     
-    let restoreCursor (): unit =
-        sendCommand "[u"
+    let setCursorXY ((x, y) : int * int): unit =
+        System.Console.SetCursorPosition(x, y)
     
-    let clearToEnd (): unit =
-        sendCommand "[0J"
