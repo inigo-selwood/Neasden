@@ -4,6 +4,22 @@
 
 An implementation of the classic game of Noughts and Crosses, written in F#.
 
+## Example
+
+```
+inigo-selwood:Neaden$ dotnet run Neasden.fsproj
+
+┌───┬───┬───┐
+│ o │   │ @ │
+├───┼───┼───┤
+│   │ x │   │
+├───┼───┼───┤
+│   │   │   │
+└───┴───┴───┘
+```
+
+By default, you play as crosses, and the computer plays as noughts. While choosing your next move, the cursor is represented by the `@` symbol.
+
 ## Usage
 
 ```
@@ -37,3 +53,5 @@ See the implementation in [Board.fs](source\Board.fs).
 
 - Add a rubrick, and a turn counter to the interface
 - Add colours using ANSI embed codes
+- Allow the player to choose their symbol
+- Implement the cursor by highlighting, not using the `@` symbol
